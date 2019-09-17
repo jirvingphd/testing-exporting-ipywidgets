@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ihelp menu test export</title>
+</head>
+<body>
+
+
+<!-- Load require.js. Delete this if your page already loads require.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{
+  "version_major": 2,
+  "version_minor": 0,
+  "state": {
+    "26740088f9ba42e294056b0f267aa974": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "c071fad4f132402f81222dc5b4e040e1": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "f24cea8c897443daa6b115de16722c19": {
+      "model_name": "CheckboxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show 'help(func)'",
+        "layout": "IPY_MODEL_26740088f9ba42e294056b0f267aa974",
+        "style": "IPY_MODEL_c071fad4f132402f81222dc5b4e040e1",
+        "value": true
+      }
+    },
+    "72f1daaf664b4108a45ef5325099991a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "719173c568204e159daa104ca951ab01": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "e9a1b7ad1eaf43a58170c61c34614149": {
+      "model_name": "CheckboxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show source code",
+        "layout": "IPY_MODEL_72f1daaf664b4108a45ef5325099991a",
+        "style": "IPY_MODEL_719173c568204e159daa104ca951ab01",
+        "value": true
+      }
+    },
+    "09d92e0fcc034d778cc5a601fbfb8e64": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "d3cbe542230741b88bd28b76dc668042": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "9111f5594c4e411893f60edccef9a6fa": {
+      "model_name": "CheckboxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show source filepath",
+        "layout": "IPY_MODEL_09d92e0fcc034d778cc5a601fbfb8e64",
+        "style": "IPY_MODEL_d3cbe542230741b88bd28b76dc668042"
+      }
+    },
+    "544df278eb7b4d158aedf964afdac532": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "5eaac00076e1410bb6e8a15acb55312c": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_f24cea8c897443daa6b115de16722c19",
+          "IPY_MODEL_e9a1b7ad1eaf43a58170c61c34614149",
+          "IPY_MODEL_9111f5594c4e411893f60edccef9a6fa"
+        ],
+        "layout": "IPY_MODEL_544df278eb7b4d158aedf964afdac532"
+      }
+    },
+    "69abf163ee5c49ae85ecfa9dcf798996": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "93564a61e11f433ebf2c5617fb5f3ba0": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "8eabbcf106724a1db6df1fad0665db65": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "ihelp_menu2",
+          "list2df",
+          "save_model_weights_params"
+        ],
+        "index": 0,
+        "layout": "IPY_MODEL_69abf163ee5c49ae85ecfa9dcf798996",
+        "style": "IPY_MODEL_93564a61e11f433ebf2c5617fb5f3ba0"
+      }
+    },
+    "9f1283af3d1d45978ffc1c294f1169b3": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "5e9d546a1c5147988ae61b48670e0f8e": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "f627f6e0a52b4e0db2f5dfc56e30be5d": {
+      "model_name": "LabelModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_9f1283af3d1d45978ffc1c294f1169b3",
+        "style": "IPY_MODEL_5e9d546a1c5147988ae61b48670e0f8e",
+        "value": "Function Menu"
+      }
+    },
+    "f3e65307043946d3a7f60082ae22b3b5": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "6f61e31da0bf43bba4dcacd79cd8b98a": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "3413c89e51634d639568dbfe16da8915": {
+      "model_name": "ToggleButtonModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show/hide",
+        "layout": "IPY_MODEL_f3e65307043946d3a7f60082ae22b3b5",
+        "style": "IPY_MODEL_6f61e31da0bf43bba4dcacd79cd8b98a"
+      }
+    },
+    "68b203754e544bacb1659ec00fe4f717": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "a6073f3da38448c7ada86fdb8a3e0ef3": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "0da26a41bfd543c7a1047cfff72bf602": {
+      "model_name": "LabelModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_68b203754e544bacb1659ec00fe4f717",
+        "style": "IPY_MODEL_a6073f3da38448c7ada86fdb8a3e0ef3",
+        "value": "iHelp Menu: View Help and/or Source Code"
+      }
+    },
+    "f00c41635f5e46d9a1ca5d3c7ccd20a8": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "a6a77b2dc08640ce8028957a8028051f": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_f627f6e0a52b4e0db2f5dfc56e30be5d",
+          "IPY_MODEL_8eabbcf106724a1db6df1fad0665db65",
+          "IPY_MODEL_3413c89e51634d639568dbfe16da8915"
+        ],
+        "layout": "IPY_MODEL_f00c41635f5e46d9a1ca5d3c7ccd20a8"
+      }
+    },
+    "bd2ce83974dc4566bf12feeba7993d9b": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "f8fa0d54d8544f5ea19916199fdc84e2": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_0da26a41bfd543c7a1047cfff72bf602",
+          "IPY_MODEL_a6a77b2dc08640ce8028957a8028051f"
+        ],
+        "layout": "IPY_MODEL_bd2ce83974dc4566bf12feeba7993d9b"
+      }
+    },
+    "9d00537046824ffb88cef939eb735c6d": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "5d77d67648b54d538c9e6d06848a5e5f": {
+      "model_name": "GridBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "box_style": "warning",
+        "children": [
+          "IPY_MODEL_f8fa0d54d8544f5ea19916199fdc84e2",
+          "IPY_MODEL_5eaac00076e1410bb6e8a15acb55312c"
+        ],
+        "layout": "IPY_MODEL_9d00537046824ffb88cef939eb735c6d"
+      }
+    },
+    "d8915e5489e344338f8d41a0dffc067c": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "71b88354b0f743b08cdb18f297818bf2": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_d8915e5489e344338f8d41a0dffc067c",
+        "outputs": []
+      }
+    },
+    "2f412aedb62c415fae724678e27f7333": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "e1136ccd398c4b0c813ba4e6a1be10a5": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "e34e7103a2124af48a97e0d2ae900364": {
+      "model_name": "CheckboxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show 'help(func)'",
+        "layout": "IPY_MODEL_2f412aedb62c415fae724678e27f7333",
+        "style": "IPY_MODEL_e1136ccd398c4b0c813ba4e6a1be10a5",
+        "value": true
+      }
+    },
+    "c14ec9e1c45c474fa6694882338d375a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "78c0a5cb742c4a2695e43028b32b8c68": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "a95f08c980104888aef0dd6edc0145e6": {
+      "model_name": "CheckboxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show source code",
+        "layout": "IPY_MODEL_c14ec9e1c45c474fa6694882338d375a",
+        "style": "IPY_MODEL_78c0a5cb742c4a2695e43028b32b8c68",
+        "value": true
+      }
+    },
+    "9422a302f4c74d3c8f9e43c85422fff1": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "1c2b58cec0b54736a14c6370579bc0e9": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "5e68dd513efb4345ac503c827fc31ffb": {
+      "model_name": "CheckboxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show source filepath",
+        "layout": "IPY_MODEL_9422a302f4c74d3c8f9e43c85422fff1",
+        "style": "IPY_MODEL_1c2b58cec0b54736a14c6370579bc0e9"
+      }
+    },
+    "eb4c14256fdc4160b2cf9731a485bc69": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "ae5fe6d4c03d4b6da86fec88509091b7": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_e34e7103a2124af48a97e0d2ae900364",
+          "IPY_MODEL_a95f08c980104888aef0dd6edc0145e6",
+          "IPY_MODEL_5e68dd513efb4345ac503c827fc31ffb"
+        ],
+        "layout": "IPY_MODEL_eb4c14256fdc4160b2cf9731a485bc69"
+      }
+    },
+    "e2c503e7dc2c4552a2f04c469fd82a05": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "9691de8afd324b659c51bc162cab4f7b": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "bc850d11647148219b774b40bb17f5a8": {
+      "model_name": "DropdownModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "_options_labels": [
+          "ihelp_menu2",
+          "list2df",
+          "save_model_weights_params"
+        ],
+        "index": 0,
+        "layout": "IPY_MODEL_e2c503e7dc2c4552a2f04c469fd82a05",
+        "style": "IPY_MODEL_9691de8afd324b659c51bc162cab4f7b"
+      }
+    },
+    "188f4485687d4030831349226a07a766": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "53ca0aef2964487cb3ada10a61a9a2dd": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "ffe7e160a7df4f419512ee1ebd2ded64": {
+      "model_name": "LabelModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_188f4485687d4030831349226a07a766",
+        "style": "IPY_MODEL_53ca0aef2964487cb3ada10a61a9a2dd",
+        "value": "Function Menu"
+      }
+    },
+    "0b893b1c7bc14b468459e06684932643": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "d447435844a64f5ba495ecac1164c7a4": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "968ddb78f78542d1aa9c6280abcff923": {
+      "model_name": "ToggleButtonModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "description": "Show/hide",
+        "layout": "IPY_MODEL_0b893b1c7bc14b468459e06684932643",
+        "style": "IPY_MODEL_d447435844a64f5ba495ecac1164c7a4"
+      }
+    },
+    "d8aafb6938e842b3ad2780b6b36f94ed": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "42460e5eceb446bf9be023bbaeafb2a4": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "d2a029cb4dfc4cdeaf3f0d3cfeb6ac35": {
+      "model_name": "LabelModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_d8aafb6938e842b3ad2780b6b36f94ed",
+        "style": "IPY_MODEL_42460e5eceb446bf9be023bbaeafb2a4",
+        "value": "iHelp Menu: View Help and/or Source Code"
+      }
+    },
+    "95b1b9cd344b41c1a097f6c5af0aaafd": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "fed9cd98eb274483a5a17828915a7164": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_ffe7e160a7df4f419512ee1ebd2ded64",
+          "IPY_MODEL_bc850d11647148219b774b40bb17f5a8",
+          "IPY_MODEL_968ddb78f78542d1aa9c6280abcff923"
+        ],
+        "layout": "IPY_MODEL_95b1b9cd344b41c1a097f6c5af0aaafd"
+      }
+    },
+    "a6cc891cae0548e0b12f9d2d91f83baf": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "bbeb79f7af1c48aa9388fe79ffb24c83": {
+      "model_name": "VBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_d2a029cb4dfc4cdeaf3f0d3cfeb6ac35",
+          "IPY_MODEL_fed9cd98eb274483a5a17828915a7164"
+        ],
+        "layout": "IPY_MODEL_a6cc891cae0548e0b12f9d2d91f83baf"
+      }
+    },
+    "c0799e95674340cba3d1d08265a8cb8e": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "cef934d139f247c8b8ee0a35100a0d0f": {
+      "model_name": "GridBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "box_style": "warning",
+        "children": [
+          "IPY_MODEL_bbeb79f7af1c48aa9388fe79ffb24c83",
+          "IPY_MODEL_ae5fe6d4c03d4b6da86fec88509091b7"
+        ],
+        "layout": "IPY_MODEL_c0799e95674340cba3d1d08265a8cb8e"
+      }
+    },
+    "71bc5b1a2e6142be8ad219429a6ce9c6": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "fc5508f433ab44deb33c866c5f95ef86": {
+      "model_name": "OutputModel",
+      "model_module": "@jupyter-widgets/output",
+      "model_module_version": "1.0.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_71bc5b1a2e6142be8ad219429a6ce9c6",
+        "outputs": []
+      }
+    }
+  }
+}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "cef934d139f247c8b8ee0a35100a0d0f"}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "fc5508f433ab44deb33c866c5f95ef86"}
+</script>
+
+</body>
+</html>
