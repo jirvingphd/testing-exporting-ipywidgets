@@ -50,6 +50,90 @@ def ihelp(function_or_mod, show_help=True, show_code=True,return_code=False,cola
     if return_code:
         return source_DF
 
+def make_function_help_dict(function_list,json_file='ihelp_output.txt'):
+    """Helper function for ihelp_menu which retreives all of the help and sourcecode text
+    for each function in the function list and saves them to a json file with specified name.
+    Returns output_dict with keys=function names, then dict[func_name]['help'] and 
+    dict[func_name]['source'] anddict[func_name]['file_location']"""
+    import pandas as pd
+    import sys
+    import inspect
+    from io import StringIO
+    notebook_output = sys.stdout
+    result = StringIO()
+    sys.stdout=result
+    
+    ## Turn single input into a list
+    if isinstance(function_list,list)==False:
+        function_list = [function_list]
+    
+    ## Make a dictionary of{function_name : function_object}
+    functions_dict = dict()
+    for fun in function_list:
+        
+        ## if input is a string, save string as key, and eval(function) as value
+        if isinstance(fun, str):
+            functions_dict[fun] = eval(fun)
+
+        ## if input is a function, get the name of function using inspect and make key, function as value
+        elif inspect.isfunction(fun):
+
+            members= inspect.getmembers(fun)
+            member_df = pd.DataFrame(members,columns=['param','values']).set_index('param')
+
+            fun_name = member_df.loc['__name__'].values[0]
+            functions_dict[fun_name] = fun
+            
+            
+    ## Create an output dict to store results for functions
+    output_dict = {}
+
+    for fun_name, real_func in functions_dict.items():
+        
+        output_dict[fun_name] = {}
+                
+        ## First save help
+        help(real_func)
+        output_dict[fun_name]['help'] = result.getvalue()
+        
+        ## Clear contents of io stream
+        result.truncate(0)
+        
+        try:
+            ## Next save source
+            print(inspect.getsource(real_func)) #eval(fun)))###f"{eval(fun)}"))
+        except:
+            print("Source code for object was not found")
+        output_dict[fun_name]['source'] = result.getvalue()
+        
+        ## clear contents of io stream
+        result.truncate(0)
+        
+        
+        ## Get file location
+        try:
+            file_loc = inspect.getfile(real_func)
+            print(file_loc)
+        except:
+            print("File location not found")
+            
+        output_dict[fun_name]['file_location'] =result.getvalue()
+        
+        
+        ## clear contents of io stream
+        result.truncate(0)        
+                
+        
+    ## Reset display back to notebook
+    sys.stdout = notebook_output    
+
+    
+    with open(json_file,'w') as f:
+        import json
+        json.dump(output_dict,f)
+
+    return output_dict
+
 
 def ihelp_menu2(function_list, json_file='ihelp_output.txt',to_embed=False):
     """Accepts a list of string names for loaded modules/functions to save the `help` output and 
@@ -149,30 +233,33 @@ def ihelp_menu2(function_list, json_file='ihelp_output.txt',to_embed=False):
     dropdown = widgets.Dropdown(options=list(output_dict.keys()))
     label = widgets.Label('Function Menu')
     button = widgets.ToggleButton(description='Show/hide',value=False)
+
+    
+    ## Define output manager
+    out = widgets.Output(layout={'border': '1px solid black'})
     
     ## Putting it all together
     title = widgets.Label('iHelp Menu: View Help and/or Source Code')
     menu = widgets.HBox(children=[label,dropdown,button])
     titled_menu = widgets.VBox(children=[title,menu])
     full_layout = widgets.GridBox(children=[titled_menu,check_boxes],box_style='warning')
+    final_layout = widgets.VBox(children=[full_layout,out])
+    
+    display(final_layout)
     
     
-    
-    ## Define output manager
-    # show_output = widgets.Output()
-
-    def dropdown_event(change): 
+    def dropdown_event(change):
+        print('Dropdown menu changed') 
         new_key = change.new
         output_display = output_dict[new_key]
     dropdown.observe(dropdown_event,names='values')
 
     
     def show_ihelp(display_help=button.value,function=dropdown.value,
-                   show_help=check_help.value,show_code=check_source.value, show_file=check_fileloc.value):#,
+                   show_help=check_help.value,show_code=check_source.value, show_file=check_fileloc.value, out=out):
                    #ouput_dict=output_dict):
 
         from IPython.display import Markdown
-#         import functions_combined_BEST as ji
         from IPython.display import display        
         page_header = '---'*28
         import json
@@ -182,47 +269,56 @@ def ihelp_menu2(function_list, json_file='ihelp_output.txt',to_embed=False):
         
         func_dict = output_dict[function]
 
-        if display_help:
-            if show_help:
-#                 display(print(func_dict['help']))
-                print(page_header)
-                banner = ''.join(["---"*2,' HELP ',"---"*24,'\n'])
-                print(banner)
-                print(func_dict['help'])
+        with out:
+            out.clear_output()
 
-            if show_code:
-                print(page_header)
+            if display_help:
+                if show_help:
+    #                 display(print(func_dict['help']))
+                    print(page_header)
+                    banner = ''.join(["---"*2,' HELP ',"---"*24,'\n'])
+                    print(banner)
+                    print(func_dict['help'])
 
-                banner = ''.join(["---"*2,' SOURCE -',"---"*23])
-                print(banner)
-                source_code = "```python\n"
-                source_code += func_dict['source']
-                source_code += "```"
-                display(Markdown(source_code))
-            
-            
-            if show_file:
-                print(page_header)
-                banner = ''.join(["---"*2,' FILE LOCATION ',"---"*21])
-                print(banner)
+                if show_code:
+                    print(page_header)
+
+                    banner = ''.join(["---"*2,' SOURCE -',"---"*23])
+                    print(banner)
+                    source_code = "```python\n"
+                    source_code += func_dict['source']
+                    source_code += "```"
+                    display(Markdown(source_code))
                 
-                file_loc = func_dict['file_location']
-                print(file_loc)
                 
-            if show_help==False & show_code==False & show_file==False:
-                display('Check at least one "Show" checkbox for output.')
-                
-        else:
-            display('Press "Show/hide" for display')
+                if show_file:
+                    print(page_header)
+                    banner = ''.join(["---"*2,' FILE LOCATION ',"---"*21])
+                    print(banner)
+                    
+                    file_loc = func_dict['file_location']
+                    print(file_loc)
+                    
+                # if show_help==False & show_code==False & show_file==False:
+                #     display('Check at least one "Show" checkbox for output.')
+                    
+            # else:
+                # display('Press "Show/hide" for display')
+            else:
+                out.clear_output()
             
-    ## Fully integrated output
+
+    
     output = widgets.interactive_output(show_ihelp,{'display_help':button,
                                                    'function':dropdown,
                                                    'show_help':check_help,
                                                    'show_code':check_source,
                                                    'show_file':check_fileloc})
 
+    with output:
+        display(final_layout)#, output)
+        # display(output)
+    
     if to_embed:
-        return full_layout, output
-    else:
-        display(full_layout, output)
+        return final_layout#,output #, output#final_layout
+
